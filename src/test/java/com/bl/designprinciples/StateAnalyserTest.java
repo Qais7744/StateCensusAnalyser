@@ -10,6 +10,7 @@ import java.io.IOException;
 public class StateAnalyserTest {
     private static final String INDIA_CENSUS_CSV_FILEPATH = "C:\\Users\\Altamash\\IdeaProjects\\StateCensusAnalyser\\src\\test\\resources\\IndiaStateCensusData.csv";
     private static final String WRONG_FILE_PATH = "./src/main/resources/IndiaStateCensusData.csv";
+    private static final String INDIA_CENSUS_WRONGEXTENSION = ".src\\test\\resources\\IndiaStateCensusData.csv";
 
     @Test
     public void givenIndiaCensusCsvFile_ReturnsCorrectRecords() {
@@ -31,6 +32,17 @@ public class StateAnalyserTest {
             Assert.assertEquals(StateCensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM, e.type);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void givenWrongType_ReturnsCustomException(){
+        try {
+            StateCensusAnalyser censusAnalyser = new StateCensusAnalyser();
+            int numOfRecords = censusAnalyser.loadStateCodeData(INDIA_CENSUS_WRONGEXTENSION);
+            Assert.assertEquals(30, numOfRecords);
+        }catch (StateCensusAnalyserException e){
+            Assert.assertEquals(StateCensusAnalyserException.ExceptionType.WRONG_FILE_EXTENSION, e.type);
         }
     }
 }
