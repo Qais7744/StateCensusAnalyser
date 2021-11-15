@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bl.designprinciples.StateAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-15T01:59:06" hostname="LAPTOP-LTNNVO58" time="0.128">
+  <properties/>
+  <testcase name="givenIndiaCensusCsvFile_ReturnsCorrectRecords" classname="com.bl.designprinciples.StateAnalyserTest" time="0.128"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
