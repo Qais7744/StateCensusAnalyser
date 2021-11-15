@@ -1,13 +1,14 @@
 package com.bl.designpriciples;
 
 public class StateCensusAnalyserException extends Exception {
-    enum ExceptionType{
-        CENSUS_FILE_PROBLEM;
+
+    public ExceptionType type;
+
+    public enum ExceptionType {
+        CENSUS_FILE_PROBLEM, CSV_FILE_INTERNAL_ISSUES;
     }
 
-    ExceptionType type;
-
-    public StateCensusAnalyserException(String message, ExceptionType type){
+    public StateCensusAnalyserException(String message, ExceptionType type) {
         super(message);
         this.type = type;
     }
